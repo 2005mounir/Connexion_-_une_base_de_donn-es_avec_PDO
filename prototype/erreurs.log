@@ -1,0 +1,2 @@
+[2026-04-03 12:38:31] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dataproject.recips' doesn't exist
+[2026-04-03 12:39:59] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dataproject.recips' doesn't exist
