@@ -12,9 +12,4 @@ try{
     echo "you have erreur in :" .$erreur->getMessage();
 }
 
-
-
-
-
-
 ?>
