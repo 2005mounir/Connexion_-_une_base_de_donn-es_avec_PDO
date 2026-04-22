@@ -23,7 +23,7 @@ $products = getallData($pdo);
         <h1 class="fw-bold">Product Management</h1>
 
         <a href="add.php">
-<button type="submit" class="btn btn-outline-success">Add</button>
+<button type="submit" class="btn btn-outline-success">Add product</button>
         </a>
     </div>
 

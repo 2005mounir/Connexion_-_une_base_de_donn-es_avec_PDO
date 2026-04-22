@@ -31,13 +31,15 @@ function  Add_Products($pdo, $prdName, $price, $quantity){
 
 
 
-
+// function for get element by id
 function getProductById($pdo, $id){
     $stmt = $pdo->prepare("SELECT * FROM products WHERE id=?");
     $stmt->execute([$id]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+
+// function for update data 
 function updateProduct($pdo, $id, $name, $price, $quantity){
     $stmt = $pdo->prepare("UPDATE products  SET name=?, price=?, quantity=?  WHERE id=?
     ");
