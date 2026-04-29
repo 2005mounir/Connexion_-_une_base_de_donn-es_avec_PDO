@@ -1,0 +1,285 @@
+/* ============================================================
+   Recettes Pro — Landing Page Stylesheet
+   Modern, responsive, professional design
+   ============================================================ */
+
+/* ---------- Reset & Variables ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream:       #fdf6ee;
+  --cream-dark:  #f3e9d8;
+  --terra:       #c2623f;
+  --terra-dark:  #a04e2e;
+  --terra-light: #f0d5c8;
+  --sage:        #7a9e7e;
+  --sage-light:  #d4e8d5;
+  --brown:       #3b2314;
+  --brown-mid:   #6b3f24;
+  --muted:       #9c8272;
+  --white:       #ffffff;
+  --shadow-sm:   0 2px 8px rgba(59,35,20,.08);
+  --shadow-md:   0 6px 24px rgba(59,35,20,.12);
+  --shadow-lg:   0 16px 48px rgba(59,35,20,.2);
+  --radius:      14px;
+  --radius-sm:   8px;
+  --transition:  .22s ease;
+  --font:        'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: linear-gradient(135deg, var(--cream) 0%, #faf3ea 100%);
+  color: var(--brown);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Decorative background shapes */
+body::before {
+  content: '';
+  position: fixed;
+  top: -300px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(194,98,63,.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -250px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(122,158,126,.07) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---------- Welcome Container ---------- */
+.welcome-container {
+  max-width: 720px;
+  width: 100%;
+  padding: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+.content {
+  text-align: center;
+  animation: slideUp .8s ease-out;
+}
+
+.content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--brown);
+  margin-bottom: 1.25rem;
+  letter-spacing: -.02em;
+  animation: slideUp .6s ease-out .1s both;
+}
+
+.content p {
+  font-size: 1.15rem;
+  color: var(--brown-mid);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: slideUp .6s ease-out .2s both;
+}
+
+/* ---------- Buttons ---------- */
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  animation: slideUp .6s ease-out .3s both;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.2rem;
+  font-family: var(--font);
+  font-size: .95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--terra) 0%, var(--terra-dark) 100%);
+  color: var(--white);
+}
+
+.btn.primary:hover {
+  background: linear-gradient(135deg, var(--terra-dark) 0%, #8f3d24 100%);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn.primary:active {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn.secondary {
+  background: rgba(122, 158, 126, .1);
+  color: var(--sage);
+  border: 2px solid var(--sage-light);
+  box-shadow: none;
+  padding: calc(1rem - 2px) calc(2.2rem - 2px);
+}
+
+.btn.secondary:hover {
+  background: var(--sage-light);
+  color: var(--sage);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn.secondary:active {
+  transform: translateY(-1px);
+}
+
+/* ---------- Animations ---------- */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 768px) {
+  .welcome-container {
+    padding: 1.5rem;
+  }
+
+  .content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .buttons {
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: .85rem 1.8rem;
+    font-size: .9rem;
+    flex: 1;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .content h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: .8rem;
+  }
+
+  .content p {
+    font-size: .95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: .8rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: .85rem 1.5rem;
+    font-size: .9rem;
+  }
+}
+
+/* ---------- Accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  body::before,
+  body::after {
+    animation: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cream: #1a1410;
+    --cream-dark: #2a1f15;
+    --brown: #f5e6d3;
+    --brown-mid: #d4b896;
+    --muted: #a89a86;
+  }
+
+  body {
+    background: linear-gradient(135deg, #1a1410 0%, #231a0f 100%);
+  }
+
+  .btn.secondary {
+    background: rgba(122, 158, 126, .15);
+    color: #a8d5aa;
+  }
+}
